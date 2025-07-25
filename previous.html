@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Previous Record</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Fredoka:wght@300..700&family=Noto+Sans+Georgian:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="namazTrackerh1">
+        <img
+          src="./images/ChatGPT Image Jul 22, 2025, 02_14_25 PM.png"
+          alt=""
+        />Namaz Tracker
+      </h1>
+      <h1 id="userName">👋Loading...</h1>
+    </div>
+    <div class="btnContainer">
+      <button onclick="trackerPage()">
+       Namaz Tracker <i class="fa-solid fa-mosque"></i></i>
+      </button>
+      <button onclick="EditPage()">Edit Profile <i class="fa-solid fa-pen-to-square"></i></button>
+      <button onclick="logoutHandler()">
+        Logout <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </div>
+<div class="record">
+  <h1>History</h1>
+<p>Track your daily namaz record from the day you signed up!</p>
+</div>
+    <div id="parent">
+      <!-- <div class="NamazCon">
+        <h1 id="Prayers">Loading...</h1>
+        <h3 id="userEmail">Loading...</h3>
+
+        <ul>
+          <li>
+            Fajr
+            <button data-namaz="Fajr" onclick="updateNamazStatus('Fajr', this)">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            Duhur
+            <button
+              data-namaz="Duhur"
+              onclick="updateNamazStatus('Duhur', this)"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            Asr
+            <button data-namaz="Asr" onclick="updateNamazStatus('Asr', this)">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            Maghrib
+            <button
+              data-namaz="Maghrib"
+              onclick="updateNamazStatus('Maghrib', this)"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+          <li>
+            Isha
+            <button data-namaz="Isha" onclick="updateNamazStatus('Isha', this)">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
+        </ul>
+        <div class="statusCon">
+          <p id="StatusUpdatePara">Status: Not updated ❌</p>
+        </div>
+      </div> -->
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Namaz Tracker App. All rights reserved.</p>
+    </footer>
+  </body>
+
+  <script type="module" src="record.js"></script>
+</html>
