@@ -41,9 +41,16 @@
 
   <div class="UpdateCon">
     <div class="updateh1">
-      <h1>Signup</h1>
+      <h1>Update Profile</h1>
     </div>
     <div class="inputCon">
+      <label for="ImageUploader" class="uploaderLabel"
+          >Upload Image
+        </label>
+        <div class="profileImageWrapper">
+          <img id="profileImage" src="./images/default.webp" alt="Profile" />
+        </div>
+        <input type="file" id="ImageUploader" accept="image/*" hidden />
       <label for="firstName">First Name</label>
       <input id="firstName" type="text" placeholder="Enter Your First Name" />
       <label for="lastName">Last Name</label>
@@ -51,14 +58,12 @@
       <label for="mobileNumber">Mobile Number</label>
       <input id="mobileNumber" type="number" placeholder="Enter Your Mobile Number" />
       <label for="email">Email</label>
-      <input id="email" type="email" placeholder="Enter Your Email Address" />
+      <input id="email" type="email" disabled placeholder="Enter Your Email Address" />
     
     </div>
-    <div class="Already">
-      <a href="./index.html">Already Account?</a>
-    </div>
+  
     <div class="signupCon">
-      <button onclick="updateUserData()">Update Profile</button>
+      <button onclick="updateUserData()">Update Profile!</button>
     </div>
   </div>
 </body>

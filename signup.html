@@ -18,6 +18,13 @@
         <h1>Signup</h1>
       </div>
       <div class="inputCon">
+        <label for="ImageUploader" class="uploaderLabel"
+          >Upload Image (Optional If You  Want)
+        </label>
+        <div class="profileImageWrapper">
+          <img id="profileImage" src="./images/default.webp" alt="Profile" />
+        </div>
+        <input type="file" id="ImageUploader" accept="image/*" hidden />
         <label for="firstName">First Name</label>
         <input id="firstName" type="text" placeholder="Enter Your First Name" />
         <label for="lastName">Last Name</label>
@@ -26,6 +33,8 @@
         <input
           id="mobileNumber"
           type="number"
+          maxlength="11"
+          pattern="[0-9]{11}"
           placeholder="Enter Your Mobile Number"
         />
         <label for="email">Email</label>

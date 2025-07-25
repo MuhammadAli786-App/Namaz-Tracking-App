@@ -310,6 +310,27 @@ footer {
 }
 
 
+.profileImageWrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    margin: auto;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+.profileImageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.uploaderLabel {
+    text-align: center;
+
+}
 
 
 @media screen and (max-width:600px) and (min-width:450px) {
