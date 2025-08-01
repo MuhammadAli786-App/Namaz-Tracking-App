@@ -120,7 +120,6 @@ const createRecordUI = (date, data, uid, email) => {
  
   `;
 };
-
 const renderPreviousRecords = async (user) => {
   try {
     const parent = document.querySelector("#parent");
@@ -137,31 +136,41 @@ const renderPreviousRecords = async (user) => {
     const userSnap = await getDoc(userRef);
     const userData = userSnap.exists() ? userSnap.data() : {};
     const userEmail = userData.email || "Not available";
+    const accountCreatedAt = new Date(user.metadata.creationTime);
+    const today = new Date();
 
-    const namazCollectionRef = collection(
-      db,
-      "users",
-      user.uid,
-      "namazTracking"
-    );
-    const querySnapshot = await getDocs(namazCollectionRef);
-    const sortedDocs = querySnapshot.docs.sort((a, b) =>
-      a.id.localeCompare(b.id)
-    );
+    const namazCollectionRef = collection(db, "users", user.uid, "namazTracking");
+    const allDocsSnap = await getDocs(namazCollectionRef);
+    const existingData = {};
 
-    sortedDocs.forEach((docSnap) => {
-      const date = docSnap.id;
-      const data = docSnap.data();
-      const html = createRecordUI(date, data, user.uid, userEmail);
-      recordsContainer.innerHTML += html;
+    allDocsSnap.forEach((docSnap) => {
+      existingData[docSnap.id] = docSnap.data();
     });
+
+    let currentDate = new Date(accountCreatedAt);
+
+    while (currentDate <= today) {
+      const dateStr = currentDate.toISOString().split("T")[0]; // yyyy-mm-dd
+
+      const data = existingData[dateStr] || {
+        Fajr: false,
+        Duhur: false,
+        Asr: false,
+        Maghrib: false,
+        Isha: false,
+      };
+
+      const html = createRecordUI(dateStr, data, user.uid, userEmail);
+      recordsContainer.innerHTML += html;
+
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
 
     attachUpdateEvents();
   } catch (error) {
     alert(error.message);
   }
 };
-
 const initPreviousPage = async (user) => {
   await showUserDetails(user);
   await renderPreviousRecords(user);
