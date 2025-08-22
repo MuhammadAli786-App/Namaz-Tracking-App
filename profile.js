@@ -27,7 +27,7 @@ profileImage.addEventListener("click", () => {
   imageUploader.click();
 });
 
-// File selected → Upload to Cloudinary
+
 imageUploader.addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) return;
